@@ -147,8 +147,8 @@ Ingrese n y r, seleccione la operación y presione calcular.
 Los archivos .txt son los únicos que se pueden cargar para procesar múltiples cálculos a la vez.
 
 Formato:
-P,r,n
-C,r,n
+P,n,r
+C,n,r
 
 Ejemplo de contenido:
 P,5,3
@@ -637,5 +637,3 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = Aplicacion(root)
     root.mainloop()
-
-
