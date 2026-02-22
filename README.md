@@ -104,7 +104,8 @@ El resultado se muestra mediante ventanas emergentes.
 
 Formato requerido:
 
-P,n,r C,n,r
+P,n,r 
+C,n,r
 
 El sistema procesa cada línea y genera resultados automáticamente.
 
@@ -139,7 +140,7 @@ Python 3.10 o superior.
 
 Dependencias externas:
 
-pip install pyttsx3 pygame
+pip install pyttsx3 pygame pillow
 
 Tkinter se incluye por defecto en la mayoría de distribuciones de
 Python.
