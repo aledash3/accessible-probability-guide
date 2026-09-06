@@ -1,173 +1,78 @@
-# Guía Accesible de Probabilidad y Estadística
+# Guía accesible de probabilidad
 
-## Descripción General
+Aplicación de escritorio en Python para estudiar **factorial, permutaciones y combinaciones**. Combina contenido teórico, una calculadora, procesamiento por lotes y herramientas de accesibilidad en una interfaz creada con Tkinter.
 
-La presente aplicación corresponde a un sistema educativo de escritorio
-desarrollado en Python, cuyo propósito es facilitar el aprendizaje de
-los conceptos fundamentales de Probabilidad relacionados con el análisis
-combinatorio.
+> Proyecto académico mejorado como pieza de portafolio: separa la lógica matemática de la interfaz, valida entradas y cuenta con pruebas automatizadas.
 
-El sistema integra teoría, cálculo automatizado, procesamiento de
-archivos y herramientas de accesibilidad dentro de una única interfaz
-gráfica desarrollada con Tkinter.
+## Características
 
-------------------------------------------------------------------------
+- Calculadora de permutaciones y combinaciones con validación de `n` y `r`.
+- Explicaciones, ejercicios resueltos, imágenes y videos locales.
+- Importación de operaciones desde un archivo TXT y exportación a CSV compatible con Excel y LibreOffice.
+- Lectura de contenido por voz y controles para aumentar o reducir la tipografía.
+- Reproductor opcional de música local; si el sistema no tiene audio disponible, el resto de la aplicación continúa funcionando.
 
-## Objetivos del Proyecto
+## Tecnologías
 
-### Objetivo General
+Python, Tkinter, Pillow, pygame y pyttsx3.
 
-Desarrollar una aplicación interactiva que permita estudiar y aplicar
-los conceptos de factorial, permutaciones y combinaciones mediante una
-interfaz accesible y funcional.
+## Instalación y ejecución
 
-### Objetivos Específicos
+Requiere Python 3.10 o superior.
 
--   Implementar un motor matemático para el cálculo de operaciones
-    combinatorias.
--   Incorporar contenido teórico embebido dentro del sistema.
--   Permitir el procesamiento masivo de operaciones mediante archivos
-    .txt.
--   Exportar resultados en formato .csv.
--   Integrar herramientas de accesibilidad como lectura por voz y
-    control de tamaño de fuente.
--   Implementar un sistema de reproducción musical como complemento
-    ambiental.
+```bash
+git clone https://github.com/aledash3/Guia-de-estudio-Probabilidad-y-Estadistica.git
+cd Guia-de-estudio-Probabilidad-y-Estadistica
+python -m venv .venv
+```
 
-------------------------------------------------------------------------
+Activa el entorno virtual y después instala las dependencias:
 
-## Marco Teórico Integrado
-
-La aplicación incluye contenido estructurado sobre:
-
--   Factorial
--   Permutaciones (orden importa)
--   Combinaciones (orden no importa)
--   Ejercicios resueltos
--   Bibliografía académica
--   Guía de uso del sistema
-
-El contenido se encuentra embebido directamente en el código fuente
-mediante estructuras tipo diccionario.
-
-------------------------------------------------------------------------
-
-## Arquitectura del Sistema
-
-El sistema está estructurado bajo el paradigma de Programación Orientada
-a Objetos (POO), organizado en las siguientes clases:
-
-### 1. Clase Contenido
-
-Almacena la información teórica organizada por secciones.
-
-### 2. Clase MotorProbabilidad
-
-Implementa los métodos matemáticos: - factorial(n) - permutacion(n, r) -
-combinacion(n, r)
-
-Utiliza la biblioteca estándar math para los cálculos factoriales.
-
-### 3. Clase SistemaVoz
-
-Permite la lectura del contenido mediante tecnología Text-To-Speech
-utilizando la biblioteca pyttsx3 y ejecución en hilos independientes
-(threading).
-
-### 4. Clase SistemaMusica
-
-Gestiona la reproducción de archivos MP3 utilizando la biblioteca
-pygame.
-
-### 5. Clase Aplicacion
-
-Controla la interfaz gráfica desarrollada con Tkinter, organizando los
-componentes mediante el sistema de distribución grid.
-
-------------------------------------------------------------------------
-
-## Funcionalidades Principales
-
-### Calculadora Combinatoria
-
-Permite calcular:
-
-Permutación: P(n,r) = n! / (n-r)!
-
-Combinación: C(n,r) = n! / (r!(n-r)!)
-
-El resultado se muestra mediante ventanas emergentes.
-
-------------------------------------------------------------------------
-
-### Procesamiento de Archivos TXT
-
-Formato requerido:
-
-P,n,r 
-C,n,r
-
-El sistema procesa cada línea y genera resultados automáticamente.
-
-------------------------------------------------------------------------
-
-### Exportación a CSV
-
-Los resultados pueden guardarse en formato CSV con las siguientes
-columnas:
-
--   Operación
--   n
--   r
--   Resultado
-
-Compatible con software de hojas de cálculo como Excel y LibreOffice.
-
-------------------------------------------------------------------------
-
-### Herramientas de Accesibilidad
-
--   Lectura por voz del contenido
--   Control de volumen independiente
--   Ajuste dinámico del tamaño de fuente
--   Interfaz maximizada automáticamente
-
-------------------------------------------------------------------------
-
-## Requisitos del Sistema
-
-Python 3.10 o superior.
-
-Dependencias externas:
-
-pip install pyttsx3 pygame pillow
-
-Tkinter se incluye por defecto en la mayoría de distribuciones de
-Python.
-
-------------------------------------------------------------------------
-
-## Ejecución
-
+```bash
+pip install -r requirements.txt
 python proba.py
+```
 
-------------------------------------------------------------------------
+`tkinter` forma parte de la instalación estándar de Python en Windows y macOS. En algunas distribuciones Linux puede requerir instalarse desde el gestor de paquetes del sistema.
 
-## Bibliografía
+## Procesamiento por lotes
 
-Devore, J. L. (2016). Probabilidad y Estadística para Ingeniería y
-Ciencias. Cengage Learning.
+Usa una operación por línea; admite espacios y líneas de comentario que comienzan por `#`:
 
-Walpole, R. E., Myers, R. H. Probabilidad y Estadística para Ingenieros.
-Pearson Educación.
+```text
+# Operación,n,r
+P,6,5
+C,6,5
+```
 
-Ross, S. M. Introducción a la Probabilidad. Academic Press.
+- `P`: permutación. El orden importa.
+- `C`: combinación. El orden no importa.
+- Para ambas operaciones se cumple `n ≥ 0` y `0 ≤ r ≤ n`.
 
-------------------------------------------------------------------------
+Desde la aplicación selecciona **Cargar TXT** y luego elige dónde guardar el archivo CSV resultante.
 
-## Conclusión
+## Arquitectura
 
-La aplicación constituye una herramienta educativa integral que combina
-teoría, práctica computacional y accesibilidad, permitiendo reforzar el
-aprendizaje del análisis combinatorio mediante un entorno interactivo
-desarrollado completamente en Python.
+```text
+proba.py          interfaz Tkinter y funciones de accesibilidad
+probabilidad.py   validación y cálculos combinatorios
+procesamiento.py  lectura de TXT y exportación de CSV
+media/            recursos visuales y audiovisuales locales
+tests/            pruebas de la lógica y el procesamiento
+```
+
+## Pruebas
+
+La lógica se prueba sin abrir la interfaz gráfica:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+## Recursos y atribución
+
+Los materiales de estudio citan a Devore, Walpole, Myers y Ross; las referencias completas se muestran en la aplicación. El reproductor permite elegir una pista MP3 local; evita redistribuir música sobre la que no tengas derechos.
+
+## Licencia
+
+Este proyecto está disponible bajo la [licencia MIT](LICENSE).

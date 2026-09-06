@@ -1,14 +1,14 @@
 import os
 import tkinter as tk
-from tkinter import Image, messagebox, filedialog
-import math
-import csv
+from tkinter import filedialog, messagebox
 import pyttsx3
 import pygame
 import threading
 from PIL import Image, ImageTk
-import os
 import subprocess
+
+from probabilidad import ErrorDeEntrada, calcular_combinacion, calcular_permutacion
+from procesamiento import exportar_csv, procesar_archivo
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MEDIA_DIR = os.path.join(BASE_DIR, "media")
@@ -174,17 +174,16 @@ class MotorProbabilidad:
 
     @staticmethod
     def factorial(n):
-        return math.factorial(n)
+        from probabilidad import calcular_factorial
+        return calcular_factorial(n)
 
     @staticmethod
     def permutacion(n, r):
-        return math.factorial(n) // math.factorial(n - r)
+        return calcular_permutacion(n, r)
 
     @staticmethod
     def combinacion(n, r):
-        return math.factorial(n) // (
-            math.factorial(r) * math.factorial(n - r)
-        )
+        return calcular_combinacion(n, r)
 
 
 # ==============================
@@ -203,14 +202,17 @@ class SistemaVoz:
 
         def ejecutar():
             self.hablando = True
-            self.engine = pyttsx3.init()
-            self.engine.setProperty('rate', 160)
-            self.engine.setProperty('volume', 0.5)
-            self.engine.say(texto)
-            self.engine.runAndWait()
-            self.engine.stop()
-            self.engine = None
-            self.hablando = False
+            try:
+                self.engine = pyttsx3.init()
+                self.engine.setProperty('rate', 160)
+                self.engine.setProperty('volume', 0.5)
+                self.engine.say(texto)
+                self.engine.runAndWait()
+            finally:
+                if self.engine:
+                    self.engine.stop()
+                self.engine = None
+                self.hablando = False
 
         threading.Thread(target=ejecutar, daemon=True).start()
 
@@ -229,34 +231,53 @@ class SistemaVoz:
 class SistemaMusica:
 
     def __init__(self):
-        pygame.mixer.init()
+        self.disponible = False
+        try:
+            pygame.mixer.init()
+            self.disponible = True
+        except pygame.error:
+            # La guía sigue funcionando en equipos sin salida de audio.
+            pass
         self.reproduciendo = False
         self.pausado = False
+        self.pista_actual = None
 
     def cargar(self):
+        if not self.disponible:
+            messagebox.showwarning("Audio no disponible", "No se pudo inicializar el sistema de audio.")
+            return None
         archivo = filedialog.askopenfilename(
             filetypes=[("Archivos MP3", "*.mp3")]
         )
         if archivo:
             pygame.mixer.music.load(archivo)
-            self.pista_actual = archivo.split("/")[-1]
+            self.pista_actual = os.path.basename(archivo)
             return self.pista_actual
 
 
     def reproducir(self):
+        if not self.disponible or not self.pista_actual:
+            messagebox.showinfo("Selecciona una pista", "Primero selecciona un archivo MP3.")
+            return
         pygame.mixer.music.play(-1)
         self.reproduciendo = True
         self.pausado = False
 
     def pausar(self):
+        if not self.disponible:
+            return
         pygame.mixer.music.pause()
         self.pausado = True
 
     def reanudar(self):
+        if not self.disponible:
+            return
         pygame.mixer.music.unpause()
         self.pausado = False
 
     def detener(self):
+        if not self.disponible:
+            return
         pygame.mixer.music.stop()
         self.reproduciendo = False
         self.pausado = False
@@ -315,7 +336,8 @@ class Aplicacion:
     
     # ------------------------------
     def cambiar_volumen(self, valor):
-        pygame.mixer.music.set_volume(float(valor))
+        if self.musica.disponible:
+            pygame.mixer.music.set_volume(float(valor))
 
     def crear_interfaz(self):
         self.root.grid_rowconfigure(1, weight=1)
@@ -329,7 +351,7 @@ class Aplicacion:
          text="Calculadora de permutación o combinación",
          font=("Arial", self.FUENTE_TITULO),
          bg="#F4F6F7"
-         ).grid(row=2, column=0,pady=2)
+         ).grid(row=2, column=0, columnspan=2, pady=2)
 
         # ==============================
         # BARRA SUPERIOR (MÚSICA) - FIJA
@@ -512,7 +534,9 @@ class Aplicacion:
                                 text=f"▶ Ver video {i}",
                                 font=("Arial", self.FUENTE_GENERAL),
                                 command=lambda r=ruta: self.abrir_video(r))
-                self.texto.window_create(tk.END, window=btn)
+                    self.texto.window_create(tk.END, window=btn)
+                else:
+                    self.texto.insert(tk.END, f"Video {i} no disponible en esta instalación.\n")
                 self.texto.insert(tk.END, "\n")
 
         self.texto.config(state="disabled")
@@ -551,7 +575,8 @@ class Aplicacion:
         def actualizar(widget):
             try:
                 widget.config(font=("Arial", self.FUENTE_GENERAL))
-            except:
+            except tk.TclError:
+                # Algunos widgets no aceptan una propiedad de fuente.
                 pass
 
             for hijo in widget.winfo_children():
@@ -580,8 +605,8 @@ class Aplicacion:
 
             messagebox.showinfo("Resultado", texto)
 
-        except:
-            messagebox.showerror("Error", "Datos inválidos")
+        except (ValueError, ErrorDeEntrada) as error:
+            messagebox.showerror("Datos inválidos", str(error))
 
     # ------------------------------
 
@@ -594,21 +619,10 @@ class Aplicacion:
         if not archivo:
             return
 
-        resultados = []
-
-        with open(archivo, "r") as f:
-            for linea in f:
-                tipo, n, r = linea.strip().split(",")
-                n, r = int(n), int(r)
-
-                if tipo == "P":
-                    res = self.motor.permutacion(n, r)
-                else:
-                    res = self.motor.combinacion(n, r)
-
-                resultados.append([tipo, n, r, res])
-
-        self.guardar_csv(resultados)
+        try:
+            self.guardar_csv(procesar_archivo(archivo))
+        except (OSError, UnicodeDecodeError, ErrorDeEntrada) as error:
+            messagebox.showerror("No se pudo procesar el archivo", str(error))
 
     # ------------------------------
 
@@ -621,10 +635,11 @@ class Aplicacion:
         if not archivo:
             return
 
-        with open(archivo, "w", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow(["Operacion", "n", "r", "Resultado"])
-            writer.writerows(resultados)
+        try:
+            exportar_csv(archivo, resultados)
+        except OSError as error:
+            messagebox.showerror("No se pudo guardar el CSV", str(error))
+            return
 
         messagebox.showinfo("Éxito", "Archivo CSV guardado correctamente")
 
