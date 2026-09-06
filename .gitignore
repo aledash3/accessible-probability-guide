@@ -1,6 +1,7 @@
 # Python
 __pycache__/
 *.py[cod]
+*.egg-info/
 .pytest_cache/
 .coverage
 venv/
@@ -13,4 +14,9 @@ Thumbs.db
 
 # User-generated exports and local media
 resultados*.csv
-media/*.mp3
+src/guia_probabilidad/recursos/*.mp3
+
+# Packaging artifacts
+build/
+dist/
+*.spec

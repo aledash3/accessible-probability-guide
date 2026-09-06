@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guia-probabilidad"
+version = "2.0.0"
+description = "Aplicación de escritorio accesible para aprender factorial, permutaciones y combinaciones."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "David Alejandro Cruz Palacios" },
+]
+dependencies = [
+  "customtkinter>=5.2",
+  "Pillow>=10.0",
+  "pygame>=2.5",
+  "pyttsx3>=2.90",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Education",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Education",
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.0"]
+
+[project.scripts]
+guia-probabilidad = "guia_probabilidad.app:main"
+
+[project.urls]
+Repository = "https://github.com/aledash3/guia-accesible-probabilidad-v2"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+guia_probabilidad = ["recursos/*.png", "recursos/*.mp4"]

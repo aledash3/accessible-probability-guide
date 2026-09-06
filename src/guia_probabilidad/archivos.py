@@ -5,7 +5,7 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-from probabilidad import ErrorDeEntrada, calcular
+from .calculos import ErrorDeEntrada, calcular
 
 
 def procesar_lineas(lineas: list[str]) -> list[tuple[str, int, int, int]]:

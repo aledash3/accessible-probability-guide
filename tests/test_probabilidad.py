@@ -1,12 +1,12 @@
 import unittest
 
-from probabilidad import (
+from guia_probabilidad.calculos import (
     ErrorDeEntrada,
     calcular_combinacion,
     calcular_factorial,
     calcular_permutacion,
 )
-from procesamiento import procesar_lineas
+from guia_probabilidad.archivos import procesar_lineas
 
 
 class CalculosCombinatoriosTests(unittest.TestCase):
