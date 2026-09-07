@@ -33,7 +33,7 @@ Facilitar la enseñanza y el aprendizaje autónomo del análisis combinatorio y 
 ### Objetivos específicos
 - **Pedagogía guiada:** Explicar factorial, permutaciones y combinaciones mediante definiciones formales, propiedades y ejemplos visuales.
 - **Validación matemática rigurosa:** Validar entradas numéricas enteras respetando las restricciones de dominio ($n \ge 0$, $0 \le r \le n$).
-- **Automatización por lotes:** Procesar archivos de texto (`.txt`) con múltiples operaciones combinatorias ignorando comentarios y líneas vacías.
+- **Automatización por lotes:** Procesar archivos de texto con múltiples operaciones combinatorias ignorando comentarios y líneas vacías.
 - **Exportación estructurada:** Generar reportes tabulados en formato CSV compatibles con Microsoft Excel y LibreOffice Calc.
 - **Accesibilidad universal:** Integrar síntesis de voz en segundo plano (TTS), control dinámico de tipografía, temas claro/oscuro/alto contraste y navegación rápida por teclado.
 - **Ingeniería mantenible:** Mantener una arquitectura de código desacoplada, modular y verificada por pruebas unitarias automatizadas e integración continua (CI).
@@ -49,10 +49,10 @@ Facilitar la enseñanza y el aprendizaje autónomo del análisis combinatorio y 
 - Validación estricta con retroalimentación clara ante entradas inválidas o desbordamientos lógicos.
 
 ### 📂 Procesamiento por lotes y exportación CSV
-- Lectura y parsing tolerante de operaciones en archivos `.txt`.
+- Lectura y parsing tolerante de operaciones en archivos `.txt` (`sample_calculations.txt`).
 - Soporte para comentarios (iniciados con `#`), espacios en blanco y líneas vacías.
 - Localización precisa de errores indicando el número exacto de línea ante datos mal estructurados.
-- Exportación automática a `.csv` con cabeceras estándar para auditoría o evaluación académica.
+- Exportación automática a `.csv` (`sample_export.csv`) con cabeceras estándar para auditoría o evaluación académica.
 
 ### ♿ Accesibilidad y diseño universal
 - **Texto a voz (TTS):** Lectura del contenido de las lecciones mediante `pyttsx3` en hilos de fondo desacoplados.
@@ -70,39 +70,39 @@ Facilitar la enseñanza y el aprendizaje autónomo del análisis combinatorio y 
 
 | Factorial | Permutaciones | Combinaciones |
 | :---: | :---: | :---: |
-| ![Factorial](src/guia_probabilidad/recursos/factorial.png) | ![Permutaciones](src/guia_probabilidad/recursos/permutacion.png) | ![Combinaciones](src/guia_probabilidad/recursos/combinaciones.png) |
+| ![Factorial](src/probability_guide/assets/factorial.png) | ![Permutaciones](src/probability_guide/assets/permutacion.png) | ![Combinaciones](src/probability_guide/assets/combinaciones.png) |
 
 ---
 
 ## 🏗 Arquitectura del proyecto
 
-El proyecto sigue una estructura modular estándar para empaquetado en Python:
+El proyecto sigue una estructura modular estándar para empaquetado en Python con nomenclatura en inglés:
 
 ```text
 accessible-probability-guide/
 ├── .github/
 │   └── workflows/
-│       └── tests.yml           # Pipeline de CI (GitHub Actions)
+│       └── tests.yml            # Pipeline de CI (GitHub Actions)
 ├── scripts/
-│   └── build_windows.ps1       # Script PowerShell para empaquetar con PyInstaller
+│   └── build_windows.ps1        # Script PowerShell para empaquetar con PyInstaller
 ├── src/
-│   └── guia_probabilidad/
-│       ├── __init__.py         # Metadatos del paquete
-│       ├── __main__.py         # Punto de entrada de ejecución como módulo
-│       ├── app.py              # Interfaz gráfica (Tkinter) y accesibilidad
-│       ├── archivos.py         # Parser de TXT y exportación a CSV
-│       ├── calculos.py         # Motor matemático y validación de dominios
-│       ├── contenido.py        # Lecciones pedagógicas, teoría y bibliografía
-│       ├── voz.py              # Motor asíncrono de síntesis de voz (pyttsx3)
-│       └── recursos/           # Ilustraciones y recursos multimedia
+│   └── probability_guide/
+│       ├── __init__.py          # Metadatos del paquete
+│       ├── __main__.py          # Punto de entrada de ejecución como módulo
+│       ├── app.py               # Interfaz gráfica (Tkinter) y accesibilidad
+│       ├── calculations.py      # Motor matemático y validación de dominios
+│       ├── content.py           # Lecciones pedagógicas, teoría y bibliografía
+│       ├── file_processing.py   # Parser de TXT y exportación a CSV
+│       ├── speech.py            # Motor asíncrono de síntesis de voz (pyttsx3)
+│       └── assets/              # Ilustraciones y recursos multimedia
 ├── tests/
-│   └── test_probabilidad.py    # Suite de pruebas unitarias automatizadas
-├── Calculos_a_realizar.txt     # Archivo de ejemplo para procesamiento por lotes
-├── Exportacion_calculos.csv    # Ejemplo de archivo CSV resultante
-├── pyproject.toml              # Especificación estándar PEP 517/518 y entrypoints
-├── LICENSE                     # Licencia MIT
-├── README.md                   # Documentación técnica en inglés
-└── README.es.md                # Documentación pedagógica en español
+│   └── test_calculations.py     # Suite de pruebas unitarias automatizadas
+├── sample_calculations.txt      # Archivo de ejemplo para procesamiento por lotes
+├── sample_export.csv            # Ejemplo de archivo CSV resultante
+├── pyproject.toml               # Especificación estándar PEP 517/518 y entrypoints
+├── LICENSE                      # Licencia MIT
+├── README.md                    # Documentación técnica en inglés
+└── README.es.md                 # Documentación pedagógica en español
 ```
 
 ---
@@ -138,11 +138,13 @@ python -m pip install .
 ### 3. Ejecutar la aplicación
 Desde cualquier terminal en tu sistema:
 ```bash
-guia-probabilidad
+probability-guide
 ```
+*(O mediante el alias: `guia-probabilidad`)*
+
 O directamente como módulo de Python:
 ```bash
-python -m guia_probabilidad
+python -m probability_guide
 ```
 
 ---
@@ -157,14 +159,14 @@ Para compilar un binario independiente (`.exe`) que funcione sin requerir Python
 
 El ejecutable compilado estará disponible en:
 ```text
-dist/GuiaProbabilidad/GuiaProbabilidad.exe
+dist/ProbabilityGuide/ProbabilityGuide.exe
 ```
 
 ---
 
 ## 📝 Formato para procesamiento por lotes
 
-El archivo `.txt` de entrada permite calcular múltiples combinatorias por línea:
+El archivo `.txt` de entrada permite calcular múltiples combinatorias por línea (`sample_calculations.txt`):
 
 ```text
 # Formato: Operación, n, r

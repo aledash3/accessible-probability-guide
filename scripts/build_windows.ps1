@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-Construye un ejecutable de Windows de la Guía de Probabilidad.
+Builds a standalone Windows executable for Accessible Probability Guide.
 
 .DESCRIPTION
-Instala las herramientas de construcción declaradas por el proyecto y crea
-dist/GuiaProbabilidad/GuiaProbabilidad.exe con los recursos visuales incluidos.
+Installs project build dependencies and creates
+dist/ProbabilityGuide/ProbabilityGuide.exe bundling all multimedia assets.
 #>
 
 $ErrorActionPreference = "Stop"
@@ -14,9 +14,9 @@ python -m PyInstaller `
     --noconfirm `
     --clean `
     --windowed `
-    --name GuiaProbabilidad `
-    --collect-data guia_probabilidad `
+    --name ProbabilityGuide `
+    --collect-data probability_guide `
     --collect-all pygame `
-    -m guia_probabilidad
+    -m probability_guide
 
-Write-Host "Ejecutable creado en dist/GuiaProbabilidad/GuiaProbabilidad.exe"
+Write-Host "Executable generated at dist/ProbabilityGuide/ProbabilityGuide.exe"

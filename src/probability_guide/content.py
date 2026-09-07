@@ -6,16 +6,39 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
-class Leccion:
-    titulo: str
-    icono: str
-    resumen: str
-    contenido: str
-    imagen: str | None = None
+class Lesson:
+    title: str
+    icon: str
+    summary: str
+    content: str
+    image: str | None = None
+
+    @property
+    def titulo(self) -> str:
+        return self.title
+
+    @property
+    def icono(self) -> str:
+        return self.icon
+
+    @property
+    def resumen(self) -> str:
+        return self.summary
+
+    @property
+    def contenido(self) -> str:
+        return self.content
+
+    @property
+    def imagen(self) -> str | None:
+        return self.image
+
+
+Leccion = Lesson
 
 
 LECCIONES = (
-    Leccion(
+    Lesson(
         "Bienvenida",
         "⌂",
         "Empieza por reconocer cuándo importa el orden.",
@@ -36,7 +59,7 @@ Ruta recomendada
 
 Consejo: antes de elegir una fórmula, pregúntate si A-B es distinto de B-A. Si la respuesta es sí, probablemente el orden importa.""",
     ),
-    Leccion(
+    Lesson(
         "Regla de decisión",
         "?",
         "Una pregunta corta para escoger la fórmula correcta.",
@@ -57,7 +80,7 @@ Prueba mental
 
 Las dos fórmulas requieren que 0 ≤ r ≤ n; n representa los elementos disponibles y r los elementos elegidos.""",
     ),
-    Leccion(
+    Lesson(
         "Factorial",
         "!",
         "El producto de los enteros positivos hasta n.",
@@ -78,7 +101,7 @@ Si tienes n objetos distintos y quieres ordenarlos todos, existen n! maneras de 
 El factorial crece muy rápido. Evita calcularlo manualmente para números grandes y usa la calculadora de esta aplicación.""",
         "factorial.png",
     ),
-    Leccion(
+    Lesson(
         "Permutaciones",
         "P",
         "Selecciones en las que cada posición cuenta.",
@@ -98,7 +121,7 @@ P(9, 3) = 9! / 6! = 9 · 8 · 7 = 504
 La elección Ana–Luis–Marta no es igual que Luis–Ana–Marta: el podio cambia. Por eso se usa una permutación.""",
         "permutacion.png",
     ),
-    Leccion(
+    Lesson(
         "Combinaciones",
         "C",
         "Selecciones en las que importa el grupo, no su orden.",
@@ -118,7 +141,7 @@ C(9, 5) = 9! / [5! · 4!] = 126
 El grupo {A, B, C, D, E} representa la misma mano sin importar en qué orden se nombraron las cartas. Por eso se usa una combinación.""",
         "combinaciones.png",
     ),
-    Leccion(
+    Lesson(
         "Ejercicios guiados",
         "✦",
         "Practica identificando datos, orden y fórmula.",
@@ -146,7 +169,7 @@ C(8, 3) = 56
 
 Comprueba cada resultado en el panel de cálculo.""",
     ),
-    Leccion(
+    Lesson(
         "Trabajo con archivos",
         "↥",
         "Procesa muchos ejercicios y exporta sus resultados.",
@@ -167,7 +190,7 @@ Puedes incluir líneas vacías y comentarios que empiecen por #. Al cargar el ar
 
 Después podrás guardar los resultados como CSV para abrirlos en Excel o LibreOffice.""",
     ),
-    Leccion(
+    Lesson(
         "Bibliografía",
         "⌁",
         "Fuentes para profundizar después de la guía.",
@@ -184,3 +207,6 @@ Después podrás guardar los resultados como CSV para abrirlos en Excel o LibreO
 La guía es un apoyo de estudio y no reemplaza las fuentes académicas ni la práctica razonada de los ejercicios.""",
     ),
 )
+
+
+LESSONS = LECCIONES

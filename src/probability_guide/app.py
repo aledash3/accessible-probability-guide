@@ -10,13 +10,14 @@ import customtkinter as ctk
 import pygame
 from PIL import Image
 
-from .archivos import exportar_csv, procesar_archivo
-from .calculos import ErrorDeEntrada, calcular
-from .contenido import LECCIONES, Leccion
-from .voz import SistemaVoz
+from .file_processing import export_csv, exportar_csv, parse_file, procesar_archivo
+from .calculations import ErrorDeEntrada, InputError, calculate, calcular
+from .content import LECCIONES, LESSONS, Leccion, Lesson
+from .speech import SistemaVoz, SpeechEngine
 
 
-RECURSOS = Path(__file__).with_name("recursos")
+ASSETS_DIR = Path(__file__).with_name("assets")
+RECURSOS = ASSETS_DIR
 COLOR_PRIMARIO = "#5B5BD6"
 COLOR_SECUNDARIO = "#8B5CF6"
 COLOR_ACENTO = "#14B8A6"

@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "guia-probabilidad"
-version = "2.0.0"
-description = "Aplicación de escritorio accesible para aprender factorial, permutaciones y combinaciones."
+name = "accessible-probability-guide"
+version = "2.1.0"
+description = "Accessible desktop application for learning factorials, permutations, and combinations with TTS and modern GUI."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -32,7 +32,8 @@ classifiers = [
 build = ["pyinstaller>=6.0"]
 
 [project.scripts]
-guia-probabilidad = "guia_probabilidad.app:main"
+probability-guide = "probability_guide.app:main"
+guia-probabilidad = "probability_guide.app:main"
 
 [project.urls]
 Repository = "https://github.com/aledash3/accessible-probability-guide"
@@ -44,4 +45,4 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-guia_probabilidad = ["recursos/*.png", "recursos/*.mp4"]
+probability_guide = ["assets/*.png", "assets/*.mp4"]

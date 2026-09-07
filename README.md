@@ -29,7 +29,7 @@ Users can study interactive lessons with visual demonstrations, calculate discre
 
 - **Guided Pedagogy:** Explain factorials, permutations, and combinations through clear definitions, mathematical properties, and visual aids.
 - **Mathematical Domain Validation:** Enforce strict mathematical constraints ($n \ge 0$, $0 \le r \le n$) with friendly error messaging.
-- **Batch Processing Engine:** Parse batch `.txt` files containing operations, handling comments, whitespace, and providing precise line-level error reporting.
+- **Batch Processing Engine:** Parse batch text files containing operations, handling comments, whitespace, and providing precise line-level error reporting.
 - **Tabular Data Export:** Generate structured CSV reports compatible with Microsoft Excel, LibreOffice Calc, and data science workflows.
 - **Universal Accessibility:** Implement asynchronous Text-to-Speech (TTS), on-the-fly font scaling, high-contrast visual themes, and complete keyboard navigation.
 - **Production Architecture:** Follow clean separation of concerns, comprehensive unit testing, automated CI pipelines, and standalone Windows executable builds.
@@ -45,10 +45,10 @@ Users can study interactive lessons with visual demonstrations, calculate discre
 - Comprehensive mathematical domain validation preventing invalid inputs and logical overflows.
 
 ### 📂 Batch Processing & CSV Export
-- Fault-tolerant parser for plain text operation files (`.txt`).
+- Fault-tolerant parser for plain text operation files (`sample_calculations.txt`).
 - Full support for comments (`#`), trailing whitespace, and blank lines.
 - Detailed error diagnostics pointing directly to the offending line number.
-- One-click CSV export formatted for academic review or grading.
+- One-click CSV export formatted for academic review or grading (`sample_export.csv`).
 
 ### ♿ Accessibility & Universal Design
 - **Text-to-Speech (TTS):** Non-blocking background narration of educational lessons via `pyttsx3`.
@@ -66,39 +66,39 @@ Users can study interactive lessons with visual demonstrations, calculate discre
 
 | Factorial | Permutations | Combinations |
 | :---: | :---: | :---: |
-| ![Factorial Illustration](src/guia_probabilidad/recursos/factorial.png) | ![Permutations Illustration](src/guia_probabilidad/recursos/permutacion.png) | ![Combinations Illustration](src/guia_probabilidad/recursos/combinaciones.png) |
+| ![Factorial Illustration](src/probability_guide/assets/factorial.png) | ![Permutations Illustration](src/probability_guide/assets/permutacion.png) | ![Combinations Illustration](src/probability_guide/assets/combinaciones.png) |
 
 ---
 
 ## 🏗 Project Architecture
 
-The codebase adheres to modern Python packaging standards (PEP 517/518):
+The codebase adheres to modern Python packaging standards (PEP 517/518) with a standard English package architecture:
 
 ```text
 accessible-probability-guide/
 ├── .github/
 │   └── workflows/
-│       └── tests.yml           # GitHub Actions CI pipeline
+│       └── tests.yml            # GitHub Actions CI pipeline
 ├── scripts/
-│   └── build_windows.ps1       # PyInstaller PowerShell packaging script
+│   └── build_windows.ps1        # PyInstaller PowerShell packaging script
 ├── src/
-│   └── guia_probabilidad/
-│       ├── __init__.py         # Package entry & version metadata
-│       ├── __main__.py         # Module execution entrypoint
-│       ├── app.py              # Tkinter GUI & accessibility controls
-│       ├── archivos.py         # Batch file parser & CSV exporter
-│       ├── calculos.py         # Combinatorics computation engine
-│       ├── contenido.py        # Educational lessons & theoretical content
-│       ├── voz.py              # Background TTS audio synthesis worker
-│       └── recursos/           # Graphical and multimedia bundled assets
+│   └── probability_guide/
+│       ├── __init__.py          # Package entry & version metadata
+│       ├── __main__.py          # Module execution entrypoint
+│       ├── app.py               # Tkinter GUI & accessibility controls
+│       ├── calculations.py      # Combinatorics computation engine
+│       ├── content.py           # Educational lessons & theoretical content
+│       ├── file_processing.py   # Batch file parser & CSV exporter
+│       ├── speech.py            # Background TTS audio synthesis worker
+│       └── assets/              # Graphical and multimedia bundled assets
 ├── tests/
-│   └── test_probabilidad.py    # Unit tests for calculations & parsing
-├── Calculos_a_realizar.txt     # Sample batch input file
-├── Exportacion_calculos.csv    # Sample exported output CSV
-├── pyproject.toml              # Build system, metadata & CLI entry points
-├── LICENSE                     # MIT License
-├── README.md                   # English technical documentation
-└── README.es.md                # Spanish educational documentation
+│   └── test_calculations.py     # Unit tests for calculations & parsing
+├── sample_calculations.txt      # Sample batch input file
+├── sample_export.csv            # Sample exported output CSV
+├── pyproject.toml               # Build system, metadata & CLI entry points
+├── LICENSE                      # MIT License
+├── README.md                    # English technical documentation
+└── README.es.md                 # Spanish educational documentation
 ```
 
 ---
@@ -134,11 +134,13 @@ python -m pip install .
 ### 3. Launch the Application
 Run the globally registered console script:
 ```bash
-guia-probabilidad
+probability-guide
 ```
+*(Alternative alias: `guia-probabilidad`)*
+
 Or execute directly as a Python module:
 ```bash
-python -m guia_probabilidad
+python -m probability_guide
 ```
 
 ---
@@ -153,14 +155,14 @@ To compile a self-contained `.exe` binary that runs on Windows without requiring
 
 The compiled binary will be located in:
 ```text
-dist/GuiaProbabilidad/GuiaProbabilidad.exe
+dist/ProbabilityGuide/ProbabilityGuide.exe
 ```
 
 ---
 
 ## 📝 Batch Input File Format
 
-The application parses batch calculations from simple text files:
+The application parses batch calculations from simple text files (`sample_calculations.txt`):
 
 ```text
 # Syntax: Operation, n, r
