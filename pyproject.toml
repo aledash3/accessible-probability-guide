@@ -35,7 +35,7 @@ build = ["pyinstaller>=6.0"]
 guia-probabilidad = "guia_probabilidad.app:main"
 
 [project.urls]
-Repository = "https://github.com/aledash3/guia-accesible-probabilidad-v2"
+Repository = "https://github.com/aledash3/accessible-probability-guide"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

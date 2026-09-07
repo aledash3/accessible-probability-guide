@@ -1,200 +1,207 @@
-# 📘 Guía Accesible de Probabilidad — Versión 2
+# 📘 Accessible Probability Guide
 
-Aplicación de escritorio desarrollada en Python para reforzar el aprendizaje de **factorial, permutaciones y combinaciones**. Integra contenido teórico, ejercicios, cálculos interactivos, procesamiento por lotes y recursos de accesibilidad en una interfaz gráfica creada con Tkinter.
+<p align="center">
+  <a href="https://github.com/aledash3/accessible-probability-guide/actions/workflows/tests.yml">
+    <img src="https://github.com/aledash3/accessible-probability-guide/actions/workflows/tests.yml/badge.svg" alt="Tests Status">
+  </a>
+  <img src="https://img.shields.io/badge/python-3.10%20%7C%203.11-blue.svg" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License">
+  <a href="README.es.md">
+    <img src="https://img.shields.io/badge/lang-Espa%C3%B1ol-yellow.svg" alt="Leer en Español">
+  </a>
+</p>
 
----
+An interactive, accessible desktop application built with Python for learning combinatorics and probability foundations (**factorials, permutations, and combinations**). It combines guided theoretical material, real-time interactive calculations, batch file processing, and robust accessibility features (Text-to-Speech synthesis, customizable UI contrast themes, dynamic font scaling, and keyboard shortcuts) within a modern desktop GUI.
 
-## 📌 Descripción general
-
-La aplicación ayuda a comprender problemas de análisis combinatorio y a resolverlos de forma guiada. El usuario puede estudiar los conceptos, calcular operaciones individuales, procesar archivos con múltiples ejercicios y exportar los resultados para revisarlos en una hoja de cálculo.
-
-La versión 2 presenta una interfaz moderna, estructura modular, validación de datos y una instalación simplificada desde la terminal.
-
----
-
-## 🎯 Objetivos
-
-### Objetivo general
-
-Facilitar el aprendizaje de los fundamentos del análisis combinatorio mediante una aplicación de escritorio accesible e interactiva.
-
-### Objetivos específicos
-
-- Explicar factorial, permutaciones y combinaciones con ejemplos.
-- Calcular operaciones validando los valores de entrada.
-- Procesar ejercicios almacenados en archivos de texto.
-- Exportar resultados en formato CSV.
-- Ofrecer lectura por voz y ajuste del tamaño de fuente.
-- Mantener una estructura de código clara y comprobable.
+> 🌐 **Language / Idioma:** English | [Leer documentación en Español](README.es.md)
 
 ---
 
-## ✨ Funcionalidades
+## 📌 Overview
 
-### 🧮 Calculadora combinatoria
+Understanding combinatorics and probability can be challenging without intuitive visual feedback and guided problem-solving tools. **Accessible Probability Guide** bridges this gap by providing an educational desktop software tailored for all learners, including users who rely on accessibility aids.
 
-- Permutaciones: `P(n, r) = n! / (n-r)!`
-- Combinaciones: `C(n, r) = n! / (r! · (n-r)!)`
-- Validación de `n ≥ 0` y `0 ≤ r ≤ n`.
-- Mensajes de error comprensibles para entradas inválidas.
-
-### 📂 Procesamiento de archivos
-
-- Lee operaciones en formato TXT.
-- Acepta líneas vacías, espacios y comentarios iniciados con `#`.
-- Identifica la línea exacta cuando el archivo contiene un error.
-- Exporta el resultado a CSV, compatible con Excel y LibreOffice.
-
-### ♿ Accesibilidad y recursos
-
-- Lectura del contenido mediante texto a voz.
-- Aumento y reducción del tamaño de letra.
-- Temas claro, oscuro y de sistema; además de un modo de alto contraste.
-- Atajos: `Ctrl + Enter` para calcular, `Ctrl + R` para leer y `Ctrl + S` para procesar un archivo.
-- Imágenes, videos locales y reproductor opcional de música.
-- La guía sigue disponible si el equipo no cuenta con salida de audio.
+Users can study interactive lessons with visual demonstrations, calculate discrete combinatorics operations with strict mathematical domain validation, process batches of problems from external text files, and export structured CSV reports for spreadsheet analysis.
 
 ---
 
-## 🖼 Recursos visuales de la guía
+## 🎯 Key Objectives
 
-| Factorial | Permutaciones | Combinaciones |
-| --- | --- | --- |
-| ![Ilustración de factorial](src/guia_probabilidad/recursos/factorial.png) | ![Ilustración de permutaciones](src/guia_probabilidad/recursos/permutacion.png) | ![Ilustración de combinaciones](src/guia_probabilidad/recursos/combinaciones.png) |
+- **Guided Pedagogy:** Explain factorials, permutations, and combinations through clear definitions, mathematical properties, and visual aids.
+- **Mathematical Domain Validation:** Enforce strict mathematical constraints ($n \ge 0$, $0 \le r \le n$) with friendly error messaging.
+- **Batch Processing Engine:** Parse batch `.txt` files containing operations, handling comments, whitespace, and providing precise line-level error reporting.
+- **Tabular Data Export:** Generate structured CSV reports compatible with Microsoft Excel, LibreOffice Calc, and data science workflows.
+- **Universal Accessibility:** Implement asynchronous Text-to-Speech (TTS), on-the-fly font scaling, high-contrast visual themes, and complete keyboard navigation.
+- **Production Architecture:** Follow clean separation of concerns, comprehensive unit testing, automated CI pipelines, and standalone Windows executable builds.
 
 ---
 
-## 🏗 Arquitectura del proyecto
+## ✨ Features
+
+### 🧮 Combinatorics Calculation Engine
+- **Permutations:** $P(n, r) = \frac{n!}{(n - r)!}$
+- **Combinations:** $C(n, r) = \frac{n!}{r! \cdot (n - r)!}$
+- **Factorials:** $n! = \prod_{k=1}^n k$ (with $0! = 1$)
+- Comprehensive mathematical domain validation preventing invalid inputs and logical overflows.
+
+### 📂 Batch Processing & CSV Export
+- Fault-tolerant parser for plain text operation files (`.txt`).
+- Full support for comments (`#`), trailing whitespace, and blank lines.
+- Detailed error diagnostics pointing directly to the offending line number.
+- One-click CSV export formatted for academic review or grading.
+
+### ♿ Accessibility & Universal Design
+- **Text-to-Speech (TTS):** Non-blocking background narration of educational lessons via `pyttsx3`.
+- **Dynamic Typography Scaling:** Dedicated controls to enlarge or shrink font sizes across all views.
+- **Theme Customization:** Light mode, Dark mode, and High-Contrast mode for low-vision environments.
+- **Productivity Keyboard Shortcuts:**
+  - `Ctrl + Enter`: Calculate current inputs.
+  - `Ctrl + R`: Toggle TTS narration.
+  - `Ctrl + S`: Open file dialog for batch calculation.
+- **Hardware Resilience:** Graceful fallback ensures full functionality even on systems without audio output devices.
+
+---
+
+## 🖼 Educational Visuals
+
+| Factorial | Permutations | Combinations |
+| :---: | :---: | :---: |
+| ![Factorial Illustration](src/guia_probabilidad/recursos/factorial.png) | ![Permutations Illustration](src/guia_probabilidad/recursos/permutacion.png) | ![Combinations Illustration](src/guia_probabilidad/recursos/combinaciones.png) |
+
+---
+
+## 🏗 Project Architecture
+
+The codebase adheres to modern Python packaging standards (PEP 517/518):
 
 ```text
-guia-accesible-probabilidad-v2/
-│
+accessible-probability-guide/
+├── .github/
+│   └── workflows/
+│       └── tests.yml           # GitHub Actions CI pipeline
+├── scripts/
+│   └── build_windows.ps1       # PyInstaller PowerShell packaging script
 ├── src/
 │   └── guia_probabilidad/
-│       ├── app.py          # Interfaz gráfica y accesibilidad
-│       ├── calculos.py     # Validación y operaciones matemáticas
-│       ├── archivos.py     # Lectura de TXT y exportación de CSV
-│       ├── contenido.py    # Lecciones, ejemplos y bibliografía
-│       ├── voz.py          # Lectura de contenido en segundo plano
-│       ├── recursos/       # Imágenes y videos de la guía
-│       └── __main__.py     # Ejecución como módulo
-│
-├── tests/                  # Pruebas automatizadas
-├── scripts/
-│   └── build_windows.ps1   # Creación del ejecutable de Windows
-├── pyproject.toml          # Configuración del paquete instalable
-└── README.md
+│       ├── __init__.py         # Package entry & version metadata
+│       ├── __main__.py         # Module execution entrypoint
+│       ├── app.py              # Tkinter GUI & accessibility controls
+│       ├── archivos.py         # Batch file parser & CSV exporter
+│       ├── calculos.py         # Combinatorics computation engine
+│       ├── contenido.py        # Educational lessons & theoretical content
+│       ├── voz.py              # Background TTS audio synthesis worker
+│       └── recursos/           # Graphical and multimedia bundled assets
+├── tests/
+│   └── test_probabilidad.py    # Unit tests for calculations & parsing
+├── Calculos_a_realizar.txt     # Sample batch input file
+├── Exportacion_calculos.csv    # Sample exported output CSV
+├── pyproject.toml              # Build system, metadata & CLI entry points
+├── LICENSE                     # MIT License
+├── README.md                   # English technical documentation
+└── README.es.md                # Spanish educational documentation
 ```
 
 ---
 
-## 🛠 Tecnologías utilizadas
+## 🛠 Tech Stack
 
-- Python 3.10+
-- Tkinter
-- Pillow
-- pygame
-- pyttsx3
-- unittest
-- PyInstaller (opcional, para generar el `.exe`)
+- **Core Language:** Python 3.10+
+- **GUI Framework:** Tkinter & CustomTkinter
+- **Image & Media Handling:** Pillow, pygame
+- **Speech Synthesis:** pyttsx3 (SAPI5 / NSSpeechSynthesizer / espeak)
+- **Packaging & Build Tools:** setuptools, PyInstaller
+- **Testing & CI:** unittest, GitHub Actions
 
 ---
 
-## 🚀 Instalación y ejecución
+## 🚀 Installation & Usage
 
-### Requisitos previos
+### Prerequisites
+- Python 3.10 or higher.
+- `tkinter` installed (bundled by default with standard Python installers on Windows and macOS).
 
-- Python 3.10 o superior.
-- `tkinter` instalado. En Windows y macOS normalmente viene incluido con Python.
-
-### 1. Clonar el repositorio
-
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/aledash3/guia-accesible-probabilidad-v2.git
-cd guia-accesible-probabilidad-v2
+git clone https://github.com/aledash3/accessible-probability-guide.git
+cd accessible-probability-guide
 ```
 
-### 2. Instalar la aplicación
-
+### 2. Install the Package
 ```bash
 python -m pip install .
 ```
 
-### 3. Abrir la guía
-
+### 3. Launch the Application
+Run the globally registered console script:
 ```bash
 guia-probabilidad
 ```
-
-También puede ejecutarse como módulo:
-
+Or execute directly as a Python module:
 ```bash
 python -m guia_probabilidad
 ```
 
 ---
 
-## 📦 Crear un ejecutable de Windows
+## 📦 Windows Standalone Executable
 
-Para obtener una aplicación que pueda abrirse sin escribir comandos de Python:
+To compile a self-contained `.exe` binary that runs on Windows without requiring a Python runtime:
 
 ```powershell
 ./scripts/build_windows.ps1
 ```
 
-El archivo resultante estará en:
-
+The compiled binary will be located in:
 ```text
 dist/GuiaProbabilidad/GuiaProbabilidad.exe
 ```
 
 ---
 
-## 📝 Formato del archivo de cálculos
+## 📝 Batch Input File Format
 
-Cada línea representa una operación:
+The application parses batch calculations from simple text files:
 
 ```text
-# Operación,n,r
-P,6,5
-C,6,5
+# Syntax: Operation, n, r
+P, 6, 5
+C, 6, 5
 ```
-
-- `P`: permutación; el orden importa.
-- `C`: combinación; el orden no importa.
+- `P`: Permutation ($P(n, r)$) — Element order matters.
+- `C`: Combination ($C(n, r)$) — Element order does not matter.
+- Lines starting with `#` or empty rows are automatically ignored.
 
 ---
 
-## 🧪 Pruebas
+## 🧪 Running Unit Tests
 
-Ejecuta las pruebas de la lógica matemática y el procesamiento de archivos:
+Run the test suite covering combinatorics calculations and file parsing routines:
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-Cada `push` y cada Pull Request ejecutan estas pruebas mediante GitHub Actions.
+All tests are verified automatically on every push and pull request via GitHub Actions.
 
 ---
 
-## 📚 Referencias
+## 📚 Academic References
 
-- Devore, J. L. *Probabilidad y Estadística para Ingeniería y Ciencias*.
-- Walpole, R. E. y Myers, R. H. *Probabilidad y Estadística para Ingenieros*.
-- Ross, S. M. *Introducción a la Probabilidad*.
-
----
-
-## 👨‍💻 Autor
-
-David Alejandro Cruz Palacios
-
-Estudiante de Ingeniería en Ciencias de la Computación
-
-Universidad Politécnica Salesiana — Quito, Ecuador
+1. **Devore, J. L.** *Probability and Statistics for Engineering and the Sciences*. Cengage Learning.
+2. **Walpole, R. E., Myers, R. H., Myers, S. L., & Ye, K.** *Probability & Statistics for Engineers & Scientists*. Pearson.
+3. **Ross, S. M.** *Introduction to Probability and Statistics for Engineers and Scientists*. Academic Press.
 
 ---
 
-## 📄 Licencia
+## 👨‍💻 Author
 
-Este proyecto se distribuye bajo la [licencia MIT](LICENSE).
+**David Alejandro Cruz Palacios**  
+Computer Science Engineering Student  
+Universidad Politécnica Salesiana — Quito, Ecuador  
+GitHub: [@aledash3](https://github.com/aledash3)
+
+---
+
+## 📄 License
+
+This project is licensed under the terms of the [MIT License](LICENSE).
