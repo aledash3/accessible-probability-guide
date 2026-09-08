@@ -1,15 +1,11 @@
 # 📘 Guía Accesible de Probabilidad
 
-<p align="center">
-  <a href="https://github.com/aledash3/accessible-probability-guide/actions/workflows/tests.yml">
-    <img src="https://github.com/aledash3/accessible-probability-guide/actions/workflows/tests.yml/badge.svg" alt="Estado de Tests">
-  </a>
-  <img src="https://img.shields.io/badge/python-3.10%20%7C%203.11-blue.svg" alt="Python 3.10+">
-  <img src="https://img.shields.io/badge/licencia-MIT-green.svg" alt="Licencia MIT">
-  <a href="README.md">
-    <img src="https://img.shields.io/badge/lang-English-blue.svg" alt="Switch to English">
-  </a>
-</p>
+[![CI](https://img.shields.io/github/actions/workflow/status/aledash3/accessible-probability-guide/tests.yml?branch=main&style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/aledash3/accessible-probability-guide/actions)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![GUI](https://img.shields.io/badge/GUI-CustomTkinter-blueviolet?style=for-the-badge)](https://customtkinter.tomschimansky.com/)
+[![Pruebas](https://img.shields.io/badge/Pruebas-7%20Aprobadas-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
+[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow?style=for-the-badge)](LICENSE)
+[![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](README.md)
 
 Aplicación de escritorio interactiva desarrollada en Python para reforzar la comprensión y el aprendizaje de **factorial, permutaciones y combinaciones**. Integra contenido pedagógico, ejercicios prácticos, cálculos interactivos en tiempo real, procesamiento por lotes mediante archivos y características avanzadas de accesibilidad (síntesis de voz, temas adaptativos, modo de alto contraste y atajos de teclado) en una interfaz gráfica moderna.
 
@@ -22,6 +18,16 @@ Aplicación de escritorio interactiva desarrollada en Python para reforzar la co
 La aplicación ayuda a comprender problemas de análisis combinatorio y a resolverlos de forma guiada y accesible. El usuario puede estudiar conceptos teóricos con ejemplos interactivos, calcular operaciones individuales con validación estricta de dominios matemáticos, procesar archivos con múltiples ejercicios en lote y exportar los resultados tabulados en CSV para su análisis en hojas de cálculo.
 
 Presenta una interfaz gráfica moderna y accesible, arquitectura modular desacoplada, validación de datos por línea y un empaquetador para generar ejecutables autónomos de Windows sin dependencias externas.
+
+---
+
+## 🖥️ Interfaz de la Aplicación
+
+Vista general de la interfaz gráfica de escritorio en modo oscuro accesible, destacando la navegación pedagógica, lectura por voz (TTS), calculadora combinatoria interactiva, procesador de lotes y controles de accesibilidad:
+
+<p align="center">
+  <img src="docs/assets/app_preview.png" alt="Interfaz Gráfica de la Guía Accesible de Probabilidad" width="850">
+</p>
 
 ---
 
@@ -201,10 +207,10 @@ El pipeline en **GitHub Actions** ejecuta estas pruebas automáticamente en cada
 
 ## 👨‍💻 Autor
 
-**David Alejandro Cruz Palacios**  
-Estudiante de Ingeniería en Ciencias de la Computación  
-Universidad Politécnica Salesiana — Quito, Ecuador  
-GitHub: [@aledash3](https://github.com/aledash3)
+**David Alejandro Cruz Palacios** — [@aledash3](https://github.com/aledash3)  
+Carrera de Ingeniería en Ciencias de la Computación  
+Asignatura: **Probabilidad y Estadística** (5to Semestre)  
+**Universidad Politécnica Salesiana (UPS)** — Quito, Ecuador
 
 ---
 

@@ -46,3 +46,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 probability_guide = ["assets/*.png", "assets/*.mp4"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

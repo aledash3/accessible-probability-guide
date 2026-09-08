@@ -1,15 +1,11 @@
 # 📘 Accessible Probability Guide
 
-<p align="center">
-  <a href="https://github.com/aledash3/accessible-probability-guide/actions/workflows/tests.yml">
-    <img src="https://github.com/aledash3/accessible-probability-guide/actions/workflows/tests.yml/badge.svg" alt="Tests Status">
-  </a>
-  <img src="https://img.shields.io/badge/python-3.10%20%7C%203.11-blue.svg" alt="Python 3.10+">
-  <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License">
-  <a href="README.es.md">
-    <img src="https://img.shields.io/badge/lang-Espa%C3%B1ol-yellow.svg" alt="Leer en Español">
-  </a>
-</p>
+[![CI](https://img.shields.io/github/actions/workflow/status/aledash3/accessible-probability-guide/tests.yml?branch=main&style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/aledash3/accessible-probability-guide/actions)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![GUI](https://img.shields.io/badge/GUI-CustomTkinter-blueviolet?style=for-the-badge)](https://customtkinter.tomschimansky.com/)
+[![Tests](https://img.shields.io/badge/Tests-7%20Passed-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![Español](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-orange?style=for-the-badge)](README.es.md)
 
 An interactive, accessible desktop application built with Python for learning combinatorics and probability foundations (**factorials, permutations, and combinations**). It combines guided theoretical material, real-time interactive calculations, batch file processing, and robust accessibility features (Text-to-Speech synthesis, customizable UI contrast themes, dynamic font scaling, and keyboard shortcuts) within a modern desktop GUI.
 
@@ -22,6 +18,16 @@ An interactive, accessible desktop application built with Python for learning co
 Understanding combinatorics and probability can be challenging without intuitive visual feedback and guided problem-solving tools. **Accessible Probability Guide** bridges this gap by providing an educational desktop software tailored for all learners, including users who rely on accessibility aids.
 
 Users can study interactive lessons with visual demonstrations, calculate discrete combinatorics operations with strict mathematical domain validation, process batches of problems from external text files, and export structured CSV reports for spreadsheet analysis.
+
+---
+
+## 🖥️ Application Interface
+
+Visual overview of the accessible dark-themed desktop GUI featuring lesson navigation, text-to-speech controls, real-time combinatorics calculator, batch file processor, and accessibility preferences:
+
+<p align="center">
+  <img src="docs/assets/app_preview.png" alt="Accessible Probability Guide GUI" width="850">
+</p>
 
 ---
 
@@ -197,10 +203,10 @@ All tests are verified automatically on every push and pull request via GitHub A
 
 ## 👨‍💻 Author
 
-**David Alejandro Cruz Palacios**  
-Computer Science Engineering Student  
-Universidad Politécnica Salesiana — Quito, Ecuador  
-GitHub: [@aledash3](https://github.com/aledash3)
+**David Alejandro Cruz Palacios** — [@aledash3](https://github.com/aledash3)  
+Computer Science Engineering  
+Course: **Probability and Statistics** (5th Semester)  
+**Universidad Politécnica Salesiana (UPS)** — Quito, Ecuador
 
 ---
 
