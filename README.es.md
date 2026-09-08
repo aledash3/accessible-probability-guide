@@ -3,11 +3,11 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/aledash3/accessible-probability-guide/tests.yml?branch=main&style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/aledash3/accessible-probability-guide/actions)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![GUI](https://img.shields.io/badge/GUI-CustomTkinter-blueviolet?style=for-the-badge)](https://customtkinter.tomschimansky.com/)
-[![Pruebas](https://img.shields.io/badge/Pruebas-7%20Aprobadas-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
+[![Pruebas](https://img.shields.io/badge/Pruebas-10%20Aprobadas-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow?style=for-the-badge)](LICENSE)
 [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](README.md)
 
-Aplicación de escritorio interactiva desarrollada en Python para reforzar la comprensión y el aprendizaje de **factorial, permutaciones y combinaciones**. Integra contenido pedagógico, ejercicios prácticos, cálculos interactivos en tiempo real, procesamiento por lotes mediante archivos y características avanzadas de accesibilidad (síntesis de voz, temas adaptativos, modo de alto contraste y atajos de teclado) en una interfaz gráfica moderna.
+Aplicación de escritorio interactiva desarrollada en Python para reforzar la comprensión y el aprendizaje de **factorial, permutaciones y combinaciones**. Integra contenido pedagógico, soporte bilingüe interactivo (Español / Inglés), ejercicios prácticos, cálculos interactivos en tiempo real, procesamiento por lotes mediante archivos y características avanzadas de accesibilidad (síntesis de voz con cambio automático de voz, temas adaptativos, modo de alto contraste y atajos de teclado) en una interfaz gráfica moderna.
 
 > 🌐 **Language / Idioma:** Español | [Switch to English documentation](README.md)
 
@@ -23,10 +23,16 @@ Presenta una interfaz gráfica moderna y accesible, arquitectura modular desacop
 
 ## 🖥️ Interfaz de la Aplicación
 
-Vista general de la interfaz gráfica de escritorio en modo oscuro accesible, destacando la navegación pedagógica, lectura por voz (TTS), calculadora combinatoria interactiva, procesador de lotes y controles de accesibilidad:
+Vista general de la interfaz gráfica de escritorio en modo accesible con soporte bilingüe interactivo (Español / Inglés), navegación pedagógica, lectura por voz (TTS), calculadora combinatoria interactiva, procesador de lotes y controles de accesibilidad:
 
+### Interfaz en Español
 <p align="center">
-  <img src="docs/assets/app_preview.png" alt="Interfaz Gráfica de la Guía Accesible de Probabilidad" width="850">
+  <img src="docs/assets/app_preview_es.png" alt="Interfaz Gráfica en Español — Guía Accesible de Probabilidad" width="850">
+</p>
+
+### Interfaz en Inglés
+<p align="center">
+  <img src="docs/assets/app_preview_en.png" alt="Interfaz Gráfica en Inglés — Guía Accesible de Probabilidad" width="850">
 </p>
 
 ---
@@ -207,10 +213,10 @@ El pipeline en **GitHub Actions** ejecuta estas pruebas automáticamente en cada
 
 ## 👨‍💻 Autor
 
-**David Alejandro Cruz Palacios** — [@aledash3](https://github.com/aledash3)  
-Carrera de Ingeniería en Ciencias de la Computación  
-Asignatura: **Probabilidad y Estadística** (5to Semestre)  
-**Universidad Politécnica Salesiana (UPS)** — Quito, Ecuador
+**David Alejandro Cruz Palacios**  
+Estudiante de Ingeniería en Ciencias de la Computación — Universidad Politécnica Salesiana  
+GitHub: [@aledash3](https://github.com/aledash3)  
+Materia: Probabilidad y Estadística (5to Semestre)
 
 ---
 

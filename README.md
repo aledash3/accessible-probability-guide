@@ -3,11 +3,11 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/aledash3/accessible-probability-guide/tests.yml?branch=main&style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/aledash3/accessible-probability-guide/actions)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![GUI](https://img.shields.io/badge/GUI-CustomTkinter-blueviolet?style=for-the-badge)](https://customtkinter.tomschimansky.com/)
-[![Tests](https://img.shields.io/badge/Tests-7%20Passed-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
+[![Tests](https://img.shields.io/badge/Tests-10%20Passed-brightgreen?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 [![Español](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-orange?style=for-the-badge)](README.es.md)
 
-An interactive, accessible desktop application built with Python for learning combinatorics and probability foundations (**factorials, permutations, and combinations**). It combines guided theoretical material, real-time interactive calculations, batch file processing, and robust accessibility features (Text-to-Speech synthesis, customizable UI contrast themes, dynamic font scaling, and keyboard shortcuts) within a modern desktop GUI.
+An interactive, accessible desktop application built with Python for learning combinatorics and probability foundations (**factorials, permutations, and combinations**). It combines guided theoretical material, real-time interactive calculations, batch file processing, bilingual internationalization (English & Spanish), and robust accessibility features (Text-to-Speech synthesis, customizable UI contrast themes, dynamic font scaling, and keyboard shortcuts) within a modern desktop GUI.
 
 > 🌐 **Language / Idioma:** English | [Leer documentación en Español](README.es.md)
 
@@ -23,10 +23,16 @@ Users can study interactive lessons with visual demonstrations, calculate discre
 
 ## 🖥️ Application Interface
 
-Visual overview of the accessible dark-themed desktop GUI featuring lesson navigation, text-to-speech controls, real-time combinatorics calculator, batch file processor, and accessibility preferences:
+Visual overview of the accessible desktop GUI featuring bilingual curriculum, text-to-speech controls, real-time combinatorics calculator, batch file processor, and accessibility preferences:
 
+### English Interface
 <p align="center">
-  <img src="docs/assets/app_preview.png" alt="Accessible Probability Guide GUI" width="850">
+  <img src="docs/assets/app_preview_en.png" alt="Accessible Probability Guide GUI — English" width="850">
+</p>
+
+### Spanish Interface
+<p align="center">
+  <img src="docs/assets/app_preview_es.png" alt="Accessible Probability Guide GUI — Spanish" width="850">
 </p>
 
 ---
@@ -203,10 +209,10 @@ All tests are verified automatically on every push and pull request via GitHub A
 
 ## 👨‍💻 Author
 
-**David Alejandro Cruz Palacios** — [@aledash3](https://github.com/aledash3)  
-Computer Science Engineering  
-Course: **Probability and Statistics** (5th Semester)  
-**Universidad Politécnica Salesiana (UPS)** — Quito, Ecuador
+**David Alejandro Cruz Palacios**  
+Computer Science Engineering Student — Universidad Politécnica Salesiana  
+GitHub: [@aledash3](https://github.com/aledash3)  
+Course: Probability and Statistics (5th Semester)
 
 ---
 
