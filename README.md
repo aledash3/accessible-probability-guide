@@ -27,12 +27,12 @@ Visual overview of the accessible desktop GUI featuring bilingual curriculum, te
 
 ### English Interface
 <p align="center">
-  <img src="docs/assets/app_preview_en.png" alt="Accessible Probability Guide GUI — English" width="850">
+  <img src="docs/assets/interface_probability_guide.png" alt="Accessible Probability Guide GUI — English" width="850">
 </p>
 
 ### Spanish Interface
 <p align="center">
-  <img src="docs/assets/app_preview_es.png" alt="Accessible Probability Guide GUI — Spanish" width="850">
+  <img src="docs/assets/interfaz_guia_probabilidad.png" alt="Accessible Probability Guide GUI — Spanish" width="850">
 </p>
 
 ---
@@ -78,7 +78,7 @@ Visual overview of the accessible desktop GUI featuring bilingual curriculum, te
 
 | Factorial | Permutations | Combinations |
 | :---: | :---: | :---: |
-| ![Factorial Illustration](src/probability_guide/assets/factorial.png) | ![Permutations Illustration](src/probability_guide/assets/permutacion.png) | ![Combinations Illustration](src/probability_guide/assets/combinaciones.png) |
+| ![Factorial Diagram](src/probability_guide/assets/factorial_diagram.png) | ![Permutations Diagram](src/probability_guide/assets/permutations_diagram.png) | ![Combinations Diagram](src/probability_guide/assets/combinations_diagram.png) |
 
 ---
 

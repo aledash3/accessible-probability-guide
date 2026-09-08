@@ -27,12 +27,12 @@ Vista general de la interfaz gráfica de escritorio en modo accesible con soport
 
 ### Interfaz en Español
 <p align="center">
-  <img src="docs/assets/app_preview_es.png" alt="Interfaz Gráfica en Español — Guía Accesible de Probabilidad" width="850">
+  <img src="docs/assets/interfaz_guia_probabilidad.png" alt="Interfaz Gráfica en Español — Guía Accesible de Probabilidad" width="850">
 </p>
 
 ### Interfaz en Inglés
 <p align="center">
-  <img src="docs/assets/app_preview_en.png" alt="Interfaz Gráfica en Inglés — Guía Accesible de Probabilidad" width="850">
+  <img src="docs/assets/interface_probability_guide.png" alt="Interfaz Gráfica en Inglés — Guía Accesible de Probabilidad" width="850">
 </p>
 
 ---
@@ -82,7 +82,7 @@ Facilitar la enseñanza y el aprendizaje autónomo del análisis combinatorio y 
 
 | Factorial | Permutaciones | Combinaciones |
 | :---: | :---: | :---: |
-| ![Factorial](src/probability_guide/assets/factorial.png) | ![Permutaciones](src/probability_guide/assets/permutacion.png) | ![Combinaciones](src/probability_guide/assets/combinaciones.png) |
+| ![Diagrama Factorial](src/probability_guide/assets/diagrama_factorial.png) | ![Diagrama Permutaciones](src/probability_guide/assets/diagrama_permutaciones.png) | ![Diagrama Combinaciones](src/probability_guide/assets/diagrama_combinaciones.png) |
 
 ---
 

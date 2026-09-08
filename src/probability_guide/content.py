@@ -99,7 +99,7 @@ Interpretación
 Si tienes n objetos distintos y quieres ordenarlos todos, existen n! maneras de hacerlo. Por ejemplo, tres libros A, B y C se pueden ordenar de 3! = 6 formas.
 
 El factorial crece muy rápido. Evita calcularlo manualmente para números grandes y usa la calculadora de esta aplicación.""",
-        "factorial.png",
+        "diagrama_factorial.png",
     ),
     Lesson(
         "Permutaciones",
@@ -119,7 +119,7 @@ De 9 estudiantes, ¿cuántas formas hay de asignar oro, plata y bronce?
 P(9, 3) = 9! / 6! = 9 · 8 · 7 = 504
 
 La elección Ana–Luis–Marta no es igual que Luis–Ana–Marta: el podio cambia. Por eso se usa una permutación.""",
-        "permutacion.png",
+        "diagrama_permutaciones.png",
     ),
     Lesson(
         "Combinaciones",
@@ -139,7 +139,7 @@ Ejemplo
 C(9, 5) = 9! / [5! · 4!] = 126
 
 El grupo {A, B, C, D, E} representa la misma mano sin importar en qué orden se nombraron las cartas. Por eso se usa una combinación.""",
-        "combinaciones.png",
+        "diagrama_combinaciones.png",
     ),
     Lesson(
         "Ejercicios guiados",
@@ -271,7 +271,7 @@ Interpretation
 If you have n distinct objects and want to arrange all of them in a sequence, there are n! distinct ways to do so. For example, three books A, B, and C can be arranged in 3! = 6 different ways.
 
 Factorials grow extremely fast. Avoid calculating them by hand for large numbers and use this application's calculator.""",
-        "factorial.png",
+        "factorial_diagram.png",
     ),
     Lesson(
         "Permutations",
@@ -291,7 +291,7 @@ From 9 candidates, in how many ways can 1st (gold), 2nd (silver), and 3rd (bronz
 P(9, 3) = 9! / (9 − 3)! = 9! / 6! = 9 · 8 · 7 = 504
 
 Selecting Ana–Luis–Marta is NOT the same as Luis–Ana–Marta: the medal podium changes. That is why a permutation is required.""",
-        "permutacion.png",
+        "permutations_diagram.png",
     ),
     Lesson(
         "Combinations",
@@ -311,7 +311,7 @@ How many 5-card hands can be dealt from a subset of 9 cards?
 C(9, 5) = 9! / [5! · 4!] = 126
 
 The group {A, B, C, D, E} represents the exact same hand regardless of the sequence in which cards were dealt. That is why a combination is used.""",
-        "combinaciones.png",
+        "combinations_diagram.png",
     ),
     Lesson(
         "Guided Exercises",
